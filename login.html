@@ -1,0 +1,231 @@
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdeu, Achou!</title>
+
+    <style>
+
+/*estilização do fundo da página*/
+        body {
+            background: linear-gradient(to left, rgb(219, 12, 205), rgb(0, 0, 0))
+        }
+
+
+/*estilização do corpo da pagina no tema escuro*/
+        body.dark {
+            background: linear-gradient(to left, rgb(13, 5, 151), black)
+        }
+
+        .textoprinc {
+            font-size: 250%;
+            color: white;
+            text-decoration: underline;
+            margin-top: 30px;
+        }
+
+        .textoprinc2 {
+            font-size: 250%;
+            color: white;
+            text-decoration: underline;
+            margin-top: 8px;
+        }
+
+        .bemvindo {
+            font-size: 150%;
+            margin-top: 105px;
+            color: white;
+        }
+
+
+/*estilização do formulário de login*/
+        .login {
+            font-size: 150%;
+            margin-top: 20px;
+            color: white;
+        }
+
+
+        .form {
+            background: #fff;
+            max-width: 360px;
+            width: 100%;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+
+/*estilização do formulário de login no tema escuro */
+        body.dark .form {
+            background-color: rgb(17, 17, 17);
+        }
+
+        body.dark .login-form {
+            color: white;
+        }
+
+/*estilização do botão do formulário de login*/
+        .form input {
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 1px solid #ccc;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .form button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #a9148b;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+
+/*estilização do botão do formulário de login no tema escuro*/
+        body.dark .form button {
+            background: rgb(13, 5, 151)
+        }
+
+        body.dark .form button:hover {
+            background: rgb(7, 2, 99)
+        }
+
+        .form button:hover {
+            background: #62014f;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .form .message a {
+            color: purple;
+            text-decoration: none;
+        }
+
+        .form .register-form {
+            display: none;
+        }
+
+
+/*estilização do formulário*/
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            flex-direction: row;
+            float: right;
+        }
+
+
+/*estilização da logo*/
+        .user2 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .user2 img {
+            width: 100px;
+            height: 100px;
+        }
+
+
+/*estilização do botão de troca de tema*/
+        #themeToggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+        }
+
+        #themeIcon {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 2%;
+            left: 92%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center class="textoprinc">PERDEU? ACHOU!</center>
+    <center class="textoprinc2">ACHADOS E PERDIDOS</center>
+
+    <body> 
+        <div class="theme-toggle">
+            <button id="themeToggle" title="Alternar Tema">
+                <img id="themeIcon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sol" />
+            </button>
+        </div>
+        <div class="user2">
+            <img src="https://i.ibb.co/GQ6xvvQk/Perdeu-achou-removebg-preview.png" alt="Perdeu-achou-removebg-preview">
+        </div>
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <input type="text" placeholder="name" />
+                    <input type="password" placeholder="password" />
+                    <input type="text" placeholder="email address" />
+                    <button type="submit">create</button>
+                    <p class="message">Already registered? <a href="#">Sign In</a></p>
+                </form>
+
+                <form class="login-form">
+                    <h2>FAÇA O LOGIN PARA ACESSAR O SITE </h2>
+                    <P>NÃO ESQUEÇA SUA SENHA, VOCÊ PODE PRECISAR NO FUTURO!</P>
+                    <input type="text" placeholder="EMAIL" />
+                    <input type="password" placeholder="CGM" />
+                    <input type="password" placeholder="SENHA" />
+                    <a href="pedro2DSB.html">
+                        <button type="button">REGiSTRAR LOGIN</button>
+                    </a>
+                    <h3 class="message">Não sabe seu CGM? Descubra <a
+                            href="https://www.areadoaluno.seed.pr.gov.br/servicosaoaluno/pages/publico/login.jsf?dswid=-2315">Aqui</a>
+                    </h3>
+                </form>
+            </div>
+    </body>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+
+            if (body.classList.contains('dark')) {
+                themeIcon.src = "https://i.ibb.co/p6PfNXhH/Luapng.png";
+                themeIcon.alt = "Lua";
+            } else {
+                themeIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+                themeIcon.alt = "Sol";
+            }
+        });
+
+
+    </script>

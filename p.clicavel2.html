@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdeu, Achou!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Perdeu, Achou!</title>
+
+    <style>
+
+        /*estilização do cabeçalho*/
+        header {
+            background: linear-gradient(to left, rgb(183, 0, 255), rgb(0, 0, 0));
+            padding: 1px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin: 0;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #searchForm {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #searchInput {
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        .user {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .user img {
+            width: 60px;
+            height: auto;
+        }
+
+        .user2 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .user2 img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav {
+            background: linear-gradient(to left, rgb(183, 0, 255), rgb(0, 0, 0));
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: azure;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+
+
+        #themeToggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+        }
+
+        #themeIcon {
+            width: 50px;
+            height: auto;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 10px;
+            left: 93%
+        }
+
+        #themeToggle:hover #themeIcon {
+            transform: scale(1.1);
+        }
+
+        body.dark {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #111;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrumar {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+
+
+        <div class="theme-toggle">
+            <button id="themeToggle" title="Alternar Tema">
+                <img id="themeIcon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sol" />
+            </button>
+        </div>
+
+        <div class="arrumar">
+            <header>
+                <h1 style="color: rgb(255, 255, 255);">Perdeu? Achou!</h1>
+            </header>
+        </div>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="arrumar">
+            <h2>Seja bem vindo, Ache seus itens perdidos aqui!!</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="forum.html">Forúm</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="material.html">Material</a></li>
+                <li><a href="objetos.html">Objetos</a></li>
+                <li><a href="roupas.html">Roupas</a></li>
+                <li><a href="brinquedos.html">Brinquedos</a></li>
+            </ul>
+        </nav>
+
+        <div class="user2">
+            <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+        </div>
+
+        <div class="user">
+            <a href="login page.html">
+                <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+            </a>
+        </div>
+
+    </header>
+
+    <h2>Obrigado pelo registro. Aguarde pela confirmação em seu e-mail!</h2>
+
+    <h2>Aperte aqui para voltar a tela inicial.</h2>
+
+    <form class="login-form">
+        <a href="pedro2DSB.html">
+            <button type="button">Tela Inicial</button>
+        </a>
+
+
+
+        </div>
+        <div class="user2">
+            <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+        </div>
+        <div class="user">
+            <a href="login page.html">
+                <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+            </a>
+        </div>
+
+
+</body>
+
+</html>
+
+<script>
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+        produto.addEventListener('mouseenter', function () {
+            let texto = document.createElement('p');
+            texto.textContent = produto.querySelector('img').alt;
+            texto.style.fontSize = '15px';
+            texto.style.textAlign = 'center';
+            texto.style.marginTop = '10px';
+            texto.style.fontWeight = 'bold';
+
+            if (!produto.querySelector('p')) {
+                produto.appendChild(texto);
+            }
+        });
+
+        produto.addEventListener('mouseleave', function () {
+            let textoExistente = produto.querySelector('p');
+            if (textoExistente) {
+                produto.removeChild(textoExistente);
+            }
+        });
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+
+        if (body.classList.contains('dark')) {
+            themeIcon.src = "https://i.ibb.co/p6PfNXhH/Luapng.png";
+            themeIcon.alt = "Lua";
+        }
+        else {
+            themeIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+            themeIcon.alt = "Sol";
+        }
+    });
+
+
+</script>

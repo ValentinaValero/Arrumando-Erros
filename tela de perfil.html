@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdeu? Achou!</title>
+
+    <style>
+        header {
+            background: linear-gradient(to left, rgb(183, 0, 255), black);
+            padding: 1px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            margin: 0;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #searchForm {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #searchInput {
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        .user {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+
+        .user img {
+            width: 60px;
+            height: auto;
+        }
+
+
+
+        .user2 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .user2 img {
+            width: 50px;
+            height: auto;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            width: 510%;
+        }
+
+        nav {
+            background: linear-gradient(to left, black, (183, 0, 255));
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+
+        #themeToggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+        }
+
+        #themeIcon {
+            width: 50px;
+            height: auto;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 2%;
+            left: 92%;
+        }
+
+          #themeToggle {
+        background: black;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        margin-top: 20px;
+        
+        
+        #themeIcon {
+            transform: scale(1.1);
+        }
+
+        .imagem {
+            margin-top: -130px;
+        }
+
+        .searchForm {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .searchInput {
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            width: 250px;
+        }
+
+        .userimg {
+            margin-top: -75px;
+            margin-left: 1425px;
+        }
+
+        .ajuda {
+            margin-top: -30px;
+            margin-left: 1350px;
+            color: black;
+        }
+
+        .notificaçãoimg {
+            margin-top: -44px;
+            margin-left: 1220px;
+        }
+
+        .notificaçãosize {
+            margin-top: -20px;
+            margin-left: 1250px;
+        }
+
+        .linguagemimg {
+            margin-top: -50px;
+            margin-left: 1100px;
+        }
+
+
+        .bolha {
+            background-color: rgb(183, 0, 255);
+            color: white;
+            width: 450px;
+            height: 570px;
+            margin-top: +45px;
+            margin-left: -1400px;
+        }
+
+        .userimg2 {
+            margin-top: -550px;
+            margin-left: -55px;
+        }
+
+        .murilo {
+            background-color: rgb(180, 180, 180);
+            margin-top: -400px;
+            margin-left: 1400px;
+            background-color: rgb(180, 180, 180);
+            margin-top: -25spx;
+            margin-right: -2000;
+            width: 220px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+
+        <div class="arrumar">
+            <header>
+                <h1 style="color: rgb(255, 255, 255);">Perdeu? Achou!</h1>
+            </header>
+        </div>
+
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="arrumar">
+            <h2>Seja bem vindo, Ache seus itens perdidos aqui!!</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="forum.html">Forúm</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="material.html">Material</a></li>
+                <li><a href="objetos.html">Objetos</a></li>
+                <li><a href="roupas.html">Roupas</a></li>
+                <li><a href="brinquedos.html">Brinquedos</a></li>
+            </ul>
+        </nav>
+
+        <div class="user2">
+            <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+        </div>
+
+        <div class="user">
+            <a href="login page.html">
+                <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+            </a>
+        </div>
+
+        <div class="theme-toggle">
+            <button id="themeToggle" title="Alternar Tema">
+                <img id="themeIcon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sol" />
+            </button>
+        </div>
+
+    </header>
+
+    <div class="bolha">
+        <h2>Imagem</h2> <input type="file">
+
+        <h2>Nome de Exibição</h2>
+
+        <form id="user">
+            <input type="text" id="userInput" placeholder="Digite seu user">
+
+            <h2>Senha</h2>
+            <h3>Alterar senha<br>Autenticação de dois fatores</h3>
+
+            <h2>E-mail</h2>
+            <h3>Alterar e-mail<br>Verificação de e-mail<br>Histórico</h3>
+
+            <h2>Tema</h2>
+            <form id="Tema">
+                <input type="radio" placeholder="claro"> <input type="radio" placeholder="escuro">
+            </form>
+    </div>
+
+    <div class="userimg2"><img src="https://i.ibb.co/Wvdvyy71/Captura-de-tela-2025-05-28-115810.png" width="500px"
+            height="500px"></div>
+
+    <div class="murilo">
+
+        <center>
+            <h1 style="color: rgb(184, 0, 0);">AVISO</h1>
+        </center>
+
+        <p>Fotos inapropriadas serão negadas pelo sistema. Caso insista, será advertido por 3 dias e a direção será
+            notificada. Se este ocorrido acontecer novamente, sua conta será banida e só será revertida pós a permissão
+            da direção. </p>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+        produto.addEventListener('mouseenter', function () {
+            let texto = document.createElement('p');
+            texto.textContent = produto.querySelector('img').alt;
+            texto.style.fontSize = '15px';
+            texto.style.textAlign = 'center';
+            texto.style.marginTop = '10px';
+            texto.style.fontWeight = 'bold';
+
+            if (!produto.querySelector('p')) {
+                produto.appendChild(texto);
+            }
+        });
+
+        produto.addEventListener('mouseleave', function () {
+            let textoExistente = produto.querySelector('p');
+            if (textoExistente) {
+                produto.removeChild(textoExistente);
+            }
+        });
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+
+        if (body.classList.contains('dark')) {
+            themeIcon.src = "https://i.ibb.co/p6PfNXhH/Luapng.png";
+            themeIcon.alt = "Lua";
+        }
+        else {
+            themeIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+            themeIcon.alt = "Sol";
+        }
+    });
+
+
+</script>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdeu, Achou!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+/*estilização do cabeçalho*/
+        header {
+            background: linear-gradient(to left, rgb(183, 0, 255), rgb(0, 0, 0));
+            padding: 1px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin: 0;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+
+/*estilizacao do corpo da pagina*/
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+
+/*estilização da barra de busca*/
+        #searchForm {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+        #searchInput {
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+
+/*estilização do botão a barra de busca*/
+        button {
+            padding: 10px 15px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #753185;
+        }
+
+
+/*estilização do registro de item perdido*/
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100vh;
+            flex-direction: row;
+        }
+
+        .form {
+            background: rgb(149, 0, 207);
+            max-width: 360px;
+            width: 100%;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .form input {
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 1px solid #ccc;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+
+/*estilização do botao de registro de item perdido*/
+        .form button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #8f389d;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .form button:hover,
+        .form button:active,
+        .form button:focus {
+            background: #602c72;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .form .message a {
+            color: #783e8a;
+            text-decoration: none;
+        }
+
+        .form .register-form {
+            display: none;
+        }
+
+
+/*estilização da imagem*/
+        .produto img {
+            width: 335px;
+            text-align: center;
+        }
+
+        .produto {
+            float: right;
+            flex-direction: row;
+            max-width: 180px;
+        }
+
+
+/*estilização do pfp*/
+        .user {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .user img {
+            width: 60px;
+            height: auto;
+        }
+
+
+/*estilização da logo do site*/
+        .user2 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .user2 img {
+            width: 50px;
+            height: auto;
+        }
+
+        .arrumar {
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+        }
+
+
+/*estilização da barra de navegação do cabeçalho*/
+        nav {
+            background: linear-gradient(to left, rgb(183, 0, 255), rgb(0, 0, 0));
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: azure;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+
+
+/*estilizao do rodapé*/
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            width: 510%;
+        }
+
+
+/*estilização do botão de troca de tema*/
+        #themeToggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-top: 20px;
+        }
+
+        #themeIcon {
+            width: 50px;
+            height: auto;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 10px;
+            left: 93%
+        }
+
+        #themeToggle:hover #themeIcon {
+            transform: scale(1.1);
+        }
+
+
+/*estilização do corpo da página no tema escuro*/
+        body.dark {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #111;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+     <!-- cabecalho com a logo, pfp, barra de pesquisa e barra de navegação-->
+    <header>
+        <div class="theme-toggle">
+            <button id="themeToggle" title="Alternar Tema">
+                <img id="themeIcon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sol" />
+            </button>
+        </div>
+
+            <h1 style="color: rgb(255, 255, 255);">Perdeu? Achou!</h1>
+
+
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="arrumar">
+            <h2> Seja bem vindo, Ache seus itens perdidos aqui!!</h2>
+        </div>
+
+   <!-- barra de navegação-->
+        <nav>
+            <ul>
+                <li><a href="forum.html">Forúm</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="material.html">Material</a></li>
+                <li><a href="objetos.html">Objetos</a></li>
+                <li><a href="roupas.html">Roupas</a></li>
+                <li><a href="brinquedos.html">Brinquedos</a></li>
+            </ul>
+        </nav>
+
+        <div class="user2">
+            <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+        </div>
+
+
+        <div class="user">
+            <a href="login page.html">
+                <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+            </a>
+        </div>
+
+    </header>
+
+<!-- forms de registro de item perdido-->
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="name" />
+                <input type="password" placeholder="password" />
+                <input type="text" placeholder="email address" />
+                <button type="submit">create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+
+            <form class="login-form">
+                <h2>É seu? Faça o registro para poder ir pegar! </h2>
+                <input type="text" placeholder="EMAIL" />
+                <input type="password" placeholder="CGM" />
+                <a href="pagina clicavel2.html">
+                    <button type="button">REGISTRAR PEDIDO</button>
+                </a>
+                <h3 class="message">Não sabe seu CGM? Descubra <a
+                        href="https://www.areadoaluno.seed.pr.gov.br/servicosaoaluno/pages/publico/login.jsf?dswid=-2315">Aqui</a>
+                </h3>
+            </form>
+        </div>
+
+<!--imagem do item perdido-->
+        <div class="produto">
+            <img src="https://i.ibb.co/jkHsJ8tm/carregador-fonte-usb-2a-com-cabo-usb-c-para-arduino-e-esp32.jpg"
+                alt="Carregador USB">
+            <h2>Carregador Preto USB-C</h2>
+        </div>
+    </div>
+
+
+    <footer>
+        Copyright © 2025 Perdeu, Achou! Inc. Todos os Direitos Reservados. Perdeu, Achou! Corporation Ltda.
+    </footer>
+
+
+</body>
+
+</html>
+
+
+<script>
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+        produto.addEventListener('mouseenter', function () {
+            let texto = document.createElement('p');
+            texto.textContent = produto.querySelector('img').alt;
+            texto.style.fontSize = '15px';
+            texto.style.textAlign = 'center';
+            texto.style.marginTop = '10px';
+            texto.style.fontWeight = 'bold';
+
+            if (!produto.querySelector('p')) {
+                produto.appendChild(texto);
+            }
+        });
+
+        produto.addEventListener('mouseleave', function () {
+            let textoExistente = produto.querySelector('p');
+            if (textoExistente) {
+                produto.removeChild(textoExistente);
+            }
+        });
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+
+        if (body.classList.contains('dark')) {
+            themeIcon.src = "https://i.ibb.co/p6PfNXhH/Luapng.png";
+            themeIcon.alt = "Lua";
+        }
+        else {
+            themeIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+            themeIcon.alt = "Sol";
+        }
+    });
+
+
+</script>

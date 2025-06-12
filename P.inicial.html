@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perdeu, Achou!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <style>
+
+/*estilizar o cabeçalho*/
+    header {
+      background: linear-gradient(to left, rgb(183, 0, 255), black);  /*deiixa um gradiente mais suave*/
+      padding: 1px;  /*ajusta o lugar, pra cima ou pra baixo*/
+      text-align: center;  /*alinha os textos no centro do cabeçalho*/
+      color: rgb(0, 0, 0);  /*coloração*/
+      margin: 0;  /*ajeita a margem do cabeçalho, de um lado ou pro outro*/
+      width: 100%;  /*ajeita a largura do cabeçalho*/
+      font-family: 'Courier New', Courier, monospace;  /*deixa como padrão a fonte de todos os textos dentro do cabbeçalho*/
+    }
+ /* fim do css do cabeçalho*/
+
+   /*estiliza o corpo da página*/
+    body {
+      font-family: 'Courier New', Courier, monospace; /*deixa como padrão a fonte de todos os textos dentro do cabbeçalho*/
+      background-color: #f4f4f4;  /*deixa a "parede" do site com a cor selecionada*/
+      margin: 0;  /*ajeita a margem que ele ocupa*/
+      padding: 0;  /*ajeita o tamanho que ocupa*/
+      display: flex;   /*deixa o corpo flexivel*/
+      flex-direction: column;  /*deixa as itens alinhados um emcima do outro*/
+      align-items: center;  /*alinha os itens para o centro*/
+      justify-content: center;  /*também alinha os itens para o centro*/
+    }
+ /*fim da estilização do corpo*/
+
+     /*estilização da barra de busca*/
+    #searchForm {
+      margin-top: 30px;  /*ajeita a altura que ele ficará*/
+      display: flex;  /*deixa ele flexivel para alterações*/
+      justify-content: center;  /*ajeita ele para o centro*/
+      gap: 10px;  /*define os espaços entre os itens*/
+    }
+
+    #searchInput {
+      padding: 10px;  /*ajeita a altura que o item irá ficar*/
+      font-size: 14px;  /*define o tamanho do texto*/
+      border: 2px solid #ccc;  /*define o tamanhoo do texto */
+      border-radius: 20px;  /*define se a borda vai ser mais redondo ou mais quadrada*/
+      width: 250px;  /*define a largura do item*/
+    }
+ /*fim da estilização da barra de busca*/
+
+     /*estilização do botão da barra de busca*/
+    button { 
+      padding: 10px 15px; /*ajeita a altura que o item irá ficar*/ 
+      background-color: #000000;  /*define  a cor do fundo do item*/
+      color: white;  /*define a cor do item*/
+      border: none;  /*define como irá ficar a borda do item*/
+      border-radius: 20px;  /*define se a borda irá ficar mais redonda ou mais quadrada*/
+      cursor: pointer; 
+    }
+
+    button:hover {
+      background-color: #000000;  /*define a cor quando o mouse fica emcima do item*/
+    }
+ /*fim da estilização do botão da barra de busca*/
+
+     /*estilização da pfp*/
+    .user {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+
+    .user img {
+      width: 60px;
+      height: auto;
+    }
+ /*fim da estilização da pfp*/
+
+ /*estilização da logo do site */
+    .user2 {
+      position: absolute;  /*define a posição do item*/
+      top: 10px;  /*deefine a altura onde o item irá ficar*/
+      left: 10px;  /*define os lados onde os itens irão ficar*/
+    }
+
+    .user2 img {
+      width: 50px;  /*define a largura do item*/
+      height: auto;  /*define a */
+    } 
+ /*fim da estilização da logo do site*/
+
+     /*estilização dos itens perdidos*/
+    .produtos-container {
+      display: grid; 
+      grid-template-columns: repeat(5, 1fr);  /*deixa os itens um emcima do outro*/
+      gap: 20px; 
+      margin-top: 30px;  /*determina a localização da margem*/
+      margin-bottom: 50 px;  /*define como irá ficar a borda*/
+      width: 100%;  /*define a largura dos itens*/
+      max-width: 1200px;  /*define a largura maxíma dos itens*/
+    }
+
+    .produto:hover {
+      transform: scale(1.2);  /*define a animação quando o mouse ficar emcima dos itens*/
+      height: 300px;  /*define a altura que o item irá ficar enquanto o mouse ficar emcima do item*/
+    }
+
+    .produto {
+      max-width: 180px;  /*define a largura máxima dos itens*/
+      width: 100px;  /*define a largura dos itens*/
+      height: 100px;  /*define a altura dos itens */
+      transition: width 0.1s, height 0.1s;  /*define a transição do item (como ele ficará enquanto o mouse fica emcima dele*/
+      padding: 15%;  /*ajeita a altura na página */
+ 
+    }
+
+    .produto img {
+      width: 100%;  /*define a largura do item*/
+      height: auto;  /*deixa a altura automático conforme o site*/
+      border-radius: 8000px;  /*define se a borda ficará mais redonda ou quadrada*/
+      display: flex;  /*deixa os itens flexiveis para eventuais mudanças na página*/
+      justify-content: center;  /*define os itens no centro da página*/
+    }
+ /*fim da estilização das imagens dos itens perdidos*/
+
+     /*estilização das tags <h1>*/
+    .produto h1 {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+    
+/*estilização dos produtos dividos com <img>*/
+    .produto img {
+      width: 150px; /*define a largura dos itens selecionados*/
+    }
+
+
+    h2 {
+      font-family: 'Courier New', Courier, monospace; /*define essa fonte como padrão para esse texto*/
+      color: #ffffff; /*define as cores do texto*/
+    }
+
+    footer {
+      background-color: #333; /*define uma cor de fundo para o rodapé*/
+      color: #fff; /*define a cor do teto dentro do rodapé*/
+      padding: 20px; /define a altura do rodapé*/
+      text-align: center; /*define se o texto vai ficar no centro do rodapé */
+      margin-top: 50px; /*define onde a margem do rodepé vai se localizar na página*/
+      width: 510%; /define a largura do rodapé */
+    }
+
+    /*codigo de lista para os itens selecionados*/
+    ul {
+      list-style: none; 
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+/*fim das tags de lista*/
+
+    /*define as tags <a> */
+    a {
+      color: #fff; 
+      text-decoration: none; /*define a decoração do texto */
+    }
+
+
+    /*estilização das navegação do cabeçalho*/
+    nav {
+      background: linear-gradient(to left, black, (183, 0, 255)); /*define a cor de fundo dos botões de navegações */
+      margin: 0; /*define a margem dos itens */
+      padding: 0; /*define a altura dos botões*/
+      width: 100%; /*define a largura*/
+    }
+
+    nav ul {
+      list-style-type: none; /*define o tipo de lista*/
+      padding: 0; /*define a altura dos itens na página */
+      margin: 0;/*define como irá ficar a margem na página*/
+      display: flex; 
+      justify-content: center; /*define todos os itens no centro */
+    }
+
+    nav li {
+      margin: 0 15px; /*define na margem do item */
+    }
+
+    nav a { 
+      color: rgb(255, 255, 255); /*defice a cor da navegação*/
+      text-decoration: none; 
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    nav a:hover {
+      background-color: rgb(0, 0, 0);
+      border-radius: 5px; /*define se a borda vai ficar mais redonda ou mais quadrada*/
+    }
+/*estilização da navegação do cabeçalho*/
+
+
+    /*estilizzação do botão de troca de tema*/
+    #themeToggle {
+      background: none;
+      border: none;
+      cursor: pointer; 
+      outline: none;
+      margin-top: 20px;
+    }
+
+    #themeIcon {
+      width: 50px;
+      height: auto;
+      transition: transform 0.3s ease; /*define a transição do botão quando houver a troca de tema */
+      position: absolute;
+      top: 2%;
+      left: 92%;
+    }
+
+    #themeToggle:hover #themeIcon {
+      transform: scale(1.1); /*transição do botão quando houver a troca de tema*/
+    }
+/*fim da estilização do botão de troca de tema*/
+
+    .container {
+      text-align: center;
+    }
+
+/*estilização do corpo da página do tema escuro */
+    body.dark {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /*fim da estilização do corpo da página do tema escuro*/
+  </style>
+
+</head>
+
+<body>
+
+
+  <!–código do cabeçalho –>
+  <header>
+    <div class="arrumar">
+      <header>
+        <h1 style="color: rgb(255, 255, 255);">Perdeu? Achou!</h1>
+      </header>
+    </div>
+
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+      <button type="submit">🔍</button>
+    </form>
+
+    <div class="arrumar">
+      <h2>Seja bem vindo, Ache seus itens perdidos aqui!!</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="forum.html">Forúm</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="material.html">Material</a></li>
+        <li><a href="objetos.html">Objetos</a></li>
+        <li><a href="roupas.html">Roupas</a></li>
+        <li><a href="brinquedos.html">Brinquedos</a></li>
+      </ul>
+    </nav>
+
+    <div class="user2">
+      <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+    </div>
+
+    <div class="user">
+      <a href="login page.html">
+        <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+      </a>
+    </div>
+  </header>
+<!– fim do código do cabeçalho–>
+
+  <!–botão da troca de tema–>
+  <div class="theme-toggle">
+    <button id="themeToggle" title="Alternar Tema">
+      <img id="themeIcon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sol" />
+    </button>
+  </div>
+<!– botaão da troca de tema–>
+
+<!– div selecionada para estilizar as imagens dos itens perdidos da vitrine–>
+  <div class="produtos-container">
+    <div class="produto">
+      <a href="pagina clicavel.html">
+        <img src="https://i.ibb.co/jkHsJ8tm/carregador-fonte-usb-2a-com-cabo-usb-c-para-arduino-e-esp32.jpg"
+          alt="Carregador USB-C - Encontrado na sala do 1C as 11:50h">
+      </a>
+
+
+    </div>
+
+    <div class="produto">
+      <img src="https://i.ibb.co/gZPzhHY6/0160857626001-ESTOJO-MASCULINO-COLOR-BLOCK-24-J-VERDE-ESCURO-U00007.jpg"
+        alt="Estojo Verde "> </a>
+
+    </div>
+
+    <div class="produto">
+      <img src="https://i.ibb.co/ycr8VBs9/br-11134201-7r98o-ln6dfeylk8xvf4.jpg" alt="Caderno do Stitch">
+
+    </div>
+
+    <div class="produto">
+      <img src="https://i.ibb.co/PzccnP2V/f6bc15b14e.jpg" alt="Mochila de Caveira">
+
+    </div>
+
+    <div class="produto">
+      <img
+        src="https://i.ibb.co/HfBVS3Rf/maleta-de-maquiagem-para-maquiador-manicure-e-viagem-divisoria-ajustavel-g-35431-1-2ae277fc8d0b64da2.jpg"
+        alt="Estojo de Maquiagem">
+
+    </div>
+
+    <div class="produto">
+      <img src="https://i.ibb.co/5hNFz9zB/D-NQ-NP-752096-MLB81273073614-122024-O.webp" alt="Brinquedo do Itachi">
+
+    </div>
+
+    <div class="produto">
+      <img src="https://i.ibb.co/dhpTfPc/29539068-800-800-v-638316480557700000-width-800-height-800-aspect-true.jpg"
+        alt="Pelúcia de Polvo">
+
+    </div>
+
+    <div class="produto">
+      <img
+        src="https://i.ibb.co/gMzyMTQw/caderno-universitario-espiral-capa-dura-10-materias-160-folhas-naruto-sao-domingos-1141-variacao-177.jpg"
+        alt="Caderno do Naruto">
+
+    </div>
+
+    <div class="produto">
+      <img
+        src="https://i.ibb.co/8n9T2FYx/garrafa-inox-garrafinha-infantil-escolar-luluca-2275971-1-3c65a22b3f1dc4cde0eec64344786edf.jpg"
+        alt="Garrafa de Panda">
+
+    </div>
+
+    <div class="produto">
+      <img src="https://i.ibb.co/XZq5N8Ly/co0074-633ece0dae958.jpg" alt="Colar de Lua">
+    </div>
+<!– div selecionada para estilizar as imagens dos itens perdidos da vitrine–>
+
+    <!–código do rodapé–>
+    <footer>
+      Copyright © 2025 Perdeu, Achou! Inc. Todos os Direitos Reservados. Perdeu, Achou! Corporation Ltda.
+    </footer>
+<!–código do rodapé–>
+    
+</body>
+
+</html>
+<script>
+  // Seleciona todos os elementos com a classe 'produto'
+  const produtos = document.querySelectorAll('.produto');
+
+  // Itera sobre cada produto para adicionar eventos de mouse
+  produtos.forEach(produto => {
+    // Adiciona um evento ao passar o mouse sobre o produto
+    produto.addEventListener('mouseenter', function () {
+      // Cria um elemento de parágrafo para exibir o texto alternativo da imagem
+      let texto = document.createElement('p');
+      texto.textContent = produto.querySelector('img').alt;
+      texto.style.fontSize = '15px';
+      texto.style.textAlign = 'center';
+      texto.style.marginTop = '10px';
+      texto.style.fontWeight = 'bold';
+
+      // Verifica se o parágrafo já existe para evitar duplicação
+      if (!produto.querySelector('p')) {
+        produto.appendChild(texto);
+      }
+    });
+
+    // Adiciona um evento para remover o texto ao retirar o mouse do produto
+    produto.addEventListener('mouseleave', function () {
+      let textoExistente = produto.querySelector('p');
+      if (textoExistente) {
+        produto.removeChild(textoExistente);
+      }
+    });
+  });
+
+  // Seleciona os elementos relacionados à alternância de tema
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const body = document.body;
+
+  // Adiciona um evento de clique para alternar entre temas claro e escuro
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+
+    // Atualiza o ícone conforme o tema escolhido
+    if (body.classList.contains('dark')) {
+      themeIcon.src = "https://i.ibb.co/p6PfNXhH/Luapng.png";
+      themeIcon.alt = "Lua"; // Ícone da Lua para modo escuro
+    } else {
+      themeIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+      themeIcon.alt = "Sol"; // Ícone do Sol para modo claro
+    }
+  });
+</script>
+

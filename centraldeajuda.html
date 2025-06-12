@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perdeu, Achou!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<style>
+
+/*estilização das tags que conter <p>*/
+  p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 60px;
+    margin: 30px;
+    margin: 6%;
+    font-size: 27px;
+
+
+
+  }
+
+  .ajuda {
+    font-size: 130%;
+    margin-top: 100px
+  }
+
+
+
+  header.links {
+    text-align: left;
+  }
+
+  .img {
+    height: 40px;
+    margin-left: 45cm;
+
+  }
+
+  a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+  .topright {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+
+/*estilizacao da barra de pesquisa */
+  #searchForm {
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #searchInput {
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    width: 250px;
+  }
+
+
+/*estilização do botao de pesquisa*/
+  button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .headerLinks a {
+    color: aliceblue;
+  }
+
+
+/*estilização do cabeçalho*/
+   header {
+      background: linear-gradient(to left, purple, black);
+      padding: 1px;
+      text-align: center;
+      color: rgb(0, 0, 0);
+      margin: 0;
+      width: 100%;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+
+/*estilização do corpo da pagina*/
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #searchForm {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #searchInput {
+      padding: 10px;
+      font-size: 14px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+
+/*estilização da pfp*/
+    .user {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+
+    .user img {
+      width: 50px;
+      height: auto;
+    }
+
+
+/*estilização da logo do projeto*/
+    .user2 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .user2 img {
+      width: 50px;
+      height: auto;
+    }
+
+
+/*estilização dos itens abaixo do cabeçalho*/
+    .produtos-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      margin-bottom: 50 px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .produto:hover {
+      transform: scale(1.2);
+      height: 300px;
+    }
+
+    .produto {
+
+      max-width: 180px;
+      width: 100px;
+      height: 100px;
+      background: #f4f4f4;
+      transition: width 1s, height 1s;
+      padding: 15%;
+
+    }
+
+    .produto img {
+      width: 100%;
+      height: auto;
+      border-radius: 8000px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .produto h1 {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .produto img {
+      width: 150px;
+    }
+
+
+    h2 {
+      font-family: 'Courier New', Courier, monospace;
+      color: #bdd8f4;
+    }
+
+
+/*estilização do rodapé*/
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+      width: 510%;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+
+/*estilização da barra de navegação*/
+    nav {
+      background: linear-gradient(to left, purple, black);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: azure;
+      text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    nav a:hover {
+      background-color: blue;
+      border-radius: 5px;
+    }
+
+</style>
+
+<body>
+  
+
+/!--cabeçalho que contém barra de navegação,  barra de pesquisa, a logo do projeto e a pfp--/
+  <header>
+    <div class="headerlinks">
+      <nav class="header-links">
+        <a href="#">Dicas</a>
+        <a href="#">Notificação</a>
+        <a href="#">Ajuda</a>
+        <a href="#">Idioma do site</a>
+      </nav>
+    </div>
+  </header>
+
+
+  
+  </div>
+
+
+    <div class="arrumar">
+      <header>
+        <h1 style="color: rgb(255, 255, 255);">Perdeu? Achou!</h1>
+      </header>
+    </div>
+
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+      <button type="submit">🔍</button>
+    </form>
+
+    <div class="arrumar">
+      <h2>Seja bem vindo, Ache seus itens perdidos aqui!!</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="forum.html">Forúm</a></li>
+        <li><a href="login page.html">Login</a></li>
+        <li><a href="material.html">Material</a></li>
+        <li><a href="objetos.html">Objetos</a></li>
+        <li><a href="roupas.html">Roupas</a></li>
+        <li><a href="brinquedos.html">Brinquedos</a></li>
+      </ul>
+    </nav>
+
+    <div class="user2">
+      <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+    </div>
+
+    <div class="user">
+      <a href="login page.html">
+        <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+      </a>
+    </div>
+
+  </header>
+
+
+
+  <center>
+    <strong>
+      <h1>Olá, como podemos ajudar?</h1>
+    </strong>
+
+    <p>O nosso site tem como objetivo ser um achados e perdidos
+      do Colégio Cívico Militar Yvone Pimentel, aonde os alunos terão a possibilidade de recuperar os objetos
+      perdidos
+      no ambiente escolar.
+      Fazendo o seu login na tela inicial a gente te encaminhará para
+      a vitrine que terá fotos dos objetos perdidos, quando você encontrar o seu
+      objeto perdido apenas coloque seu Email e CGM por questões
+      de segurança, após receber sua notificação, você ira receber seu
+      objeto e poderá retirar com a direção.</p>
+  </center>
+</body>
+
+</html>

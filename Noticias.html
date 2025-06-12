@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+
+/*estilização das tags que contém <p> */
+    p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 60px;
+        margin: 30px;
+        margin: 6%;
+        font-size: 27px;
+    }
+
+    .ajuda {
+        font-size: 130%;
+        margin-top: 100px
+    }
+
+    header.links {
+        text-align: left;
+    }
+
+    .img {
+        height: 40px;
+        margin-left: 45cm;
+
+    }
+
+    a:link {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .topright {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+/*estilização da barra de pesquisa*/
+    #searchForm {
+        margin-top: 7px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #searchInput {
+        padding: 10px;
+        font-size: 14px;
+        border: 2px solid #ccc;
+        border-radius: 20px;
+        width: 250px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+
+/*estilização do cabeçalho e dos botões do cabeçalho*/
+    .headerLinks a {
+        color: aliceblue;
+    }
+
+    header {
+        background: linear-gradient(to left, purple, black);
+        padding: -1px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        width: 100%;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+
+/*estilização do corpo da página*/
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+/*estilização da barra de pesquisa*/
+    #searchForm {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #searchInput {
+        padding: 10px;
+        font-size: 14px;
+        border: 2px solid #ccc;
+        border-radius: 20px;
+        width: 250px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+
+/*estilização da pfp e da logo do site*/
+    .user {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+
+    .user img {
+        width: 60px;
+        height: auto;
+    }
+
+    .user2 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .user2 img {
+        width: 50px;
+        height: auto;
+    }
+
+
+/*estilização das imagens selecionadas */
+    .produtos-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 50 px;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .produto:hover {
+        transform: scale(1.2);
+        height: 300px;
+    }
+
+    .produto {
+
+        max-width: 180px;
+        width: 100px;
+        height: 100px;
+        background: #f4f4f4;
+        padding: 15%;
+
+    }
+
+    .produto img {
+        width: 100%;
+        height: auto;
+        border-radius: 8000px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .produto h1 {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #3333
+    }
+
+    h2 {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+
+/*estilização do rodapé*/
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+        width: 510%;
+    }
+
+
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+/*estilização da barra de navegação do cabeçalho*/
+    nav {
+        background: linear-gradient(to left, purple, black);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 15px;
+    }
+
+    nav a {
+        color: azure;
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    nav a:hover {
+        background-color: blue;
+        border-radius: 5px;
+    }
+
+    .produto2 {
+        width: 500px;
+        padding: 20px;
+        height: 60px;
+        margin-left: -900px;
+    }
+
+
+/*estilização das logos de redes sociais*/
+    .iconsLink {
+        /*Deixar eles alinhados*/
+        margin-right: 900px;
+        position: relative;
+        top: 250px;
+        width: 450px;
+    }
+
+    .paragrafo {
+        margin-left: 1000px;
+        margin-top: -220px;
+        height: 50px;
+        width: 650px;
+    }
+
+
+    #themeToggle {
+        background: black;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        margin-top: 20px;
+    }
+
+    #themeIcon {
+        width: 50px;
+        height: auto;
+        transition: transform 0.3s ease;
+        position: absolute;
+        top: 1%;
+        left: 93%;
+    }
+
+    #themeToggle:hover #themeIcon {
+        transform: scale(1.1);
+    }
+
+
+    .container {
+        text-align: center;
+    }
+
+
+    body.dark {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+</style>
+
+<body>
+
+  <!-- cabeçalho e botões dentro dele-->
+    <header>
+        <div class="arrumar">
+            <header>
+                <h1 style="color: rgb(255, 255, 255);">Perdeu? Achou!</h1>
+            </header>
+        </div>
+
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="arrumar">
+            <h2 style="color: rgb(255, 255, 255);">Seja Bem-Vindo, Ache seus itens perdidos aqui!</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="forum.html">Forúm</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="material.html">Material</a></li>
+                <li><a href="objetos.html">Objetos</a></li>
+                <li><a href="roupas.html">Roupas</a></li>
+                <li><a href="brinquedos.html">Brinquedos</a></li>
+            </ul>
+        </nav>
+
+        <div class="user2">
+            <img src="https://i.ibb.co/fYR33WhS/perdeu-achou-removebg-preview.png" alt="perdeu-achou-removebg-preview">
+        </div>
+
+        <div class="user">
+            <a href="login page.html">
+                <img src="https://i.ibb.co/ymQC0k4n/user-icon-on-transparent-background-free-png.png">
+            </a>
+        </div>
+
+
+        <div class="theme-toggle">
+            <button id="themeToggle" title="Alternar Tema">
+                <img id="themeIcon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sol" />
+            </button>
+        </div>
+
+    </header>
+
+
+    <div>
+        <h1>Alunos do Colégio Cívico Militar Yvone Pimentel criam site de achados e perdidos</h1>
+        <h3>Curso técnico desenvolve um site para alunos do Paraná<br>13/05/2025 11:08 - atualizado há 06 minutos</h3>
+    </div>
+
+    <div class="produto2">
+        <img src="https://i.ibb.co/6R9tT55Z/Inform-tica.jpg" alt="sala de informática">
+    </div>
+
+    </div>
+    <div class="iconsLink">
+        <i class="fa fa-whatsapp" style="font-size:24px"></i>
+        <i class="fa fa-facebook-f" style="font-size:24px"></i>
+        <i class="fa fa-share-alt" style="font-size:24px"></i>
+    </div>
+
+    <div class="paragrafo">
+        <p>O site foi criado com o objetivo de
+            ajudar a comunidade escola com o objetivo
+            de facilitar a devolução de objetos perdidos,
+            alunos do Ensino médio do Colégio Cívico militar
+            Yvone Pimentel desenvolveram um site exclusivo para
+            o setor de achados e perdidos. A iniciativa surgiu durante
+            uma aula do curso técnico de desenvolvimento de
+            sistemas, já ajudou diversas colegas a reencontrarem itens como mochilas, estojos e até aparelhos
+            eletrônicos
+        </p>
+    </div>
+
+
+</body>
+
+</html>
+
+
+<script>
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+        produto.addEventListener('mouseenter', function () {
+            let texto = document.createElement('p');
+            texto.textContent = produto.querySelector('img').alt;
+            texto.style.fontSize = '15px';
+            texto.style.textAlign = 'center';
+            texto.style.marginTop = '10px';
+            texto.style.fontWeight = 'bold';
+
+            if (!produto.querySelector('p')) {
+                produto.appendChild(texto);
+            }
+        });
+
+        produto.addEventListener('mouseleave', function () {
+            let textoExistente = produto.querySelector('p');
+            if (textoExistente) {
+                produto.removeChild(textoExistente);
+            }
+        });
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+
+        if (body.classList.contains('dark')) {
+            themeIcon.src = "https://i.ibb.co/p6PfNXhH/Luapng.png";
+            themeIcon.alt = "Lua";
+        }
+        else {
+            themeIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+            themeIcon.alt = "Sol";
+        }
+    });
+
+
+</script>
