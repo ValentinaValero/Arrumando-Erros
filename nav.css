@@ -1,0 +1,97 @@
+        body {
+
+            margin: 0;
+
+        }
+
+
+        .lista {
+            display: flex;
+        }
+
+        .lista a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .lista a:hover {
+            opacity: 0.7;
+
+        }
+
+        .lista li {
+            margin-left: 32px;
+            letter-spacing: 2px;
+
+
+        }
+
+        .Logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            margin-top: 1%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+            height: 10%;
+
+        }
+
+        .menu div {
+            width: 32px;
+            height: 3px;
+            background-color: white;
+            margin: 7px;
+
+
+        }
+
+        .menu {
+            cursor: pointer;
+            margin-top: 1%;
+        
+        }
+
+        /* Menu lateral do lado direito */
+        .menu-lateral {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #520a81;
+        transition: 0.5s;
+        z-index: 1000;
+        }
+
+        .menu-lateral a {
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        }
+
+        .menu-lateral a:hover {
+        background-color: #340752;
+        }
+
+        /* Fundo escurecido */
+        .overlay {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #00000066;
+        display: none;
+        
+        }
+
+        .overlay.show {
+        display: block;
+        }
