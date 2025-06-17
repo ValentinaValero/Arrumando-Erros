@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nav.css">
+     <script src="nav.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="Logo" href="inicio.html">Logo</a>
+            
+            <ul class="lista">
+                <input placeholder="🔍 Procurar Item.." type="text">
+                <li><a href="">Início</a></li>
+                <li><a href="">Início</a></li>
+                
+            </ul>
+
+            <div class="menu" onclick="openMenuLateral()">
+                <div class="linha1"></div>
+                <div class="linha2"></div>
+                <div class="linha3"></div>
+            </div>
+        </nav>
+        <div class="menu-lateral" id="menuLateral">
+            <a href="javascript:void(0)" onclick="closeMenuLateral()">X</a>
+            <a href="./RedirecionamentoInformacoes.html">Informações</a>
+            <a href="#creditos">Notícias</a>
+            <a href="#creditos">Alunos Destaque 1TRI</a>
+            <a href="#sobrenos">Sobre o Academic Hub</a>
+            <a href="#creditos">Créditos</a>
+        </div>
+
+        <!-- Fundo escurecido -->
+        <div class="overlay" id="overlay" onclick="closeMenuLateral()"></div>
+    </header>
+</body>
+</html>
